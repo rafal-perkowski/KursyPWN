@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_uzytkownicy" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.KontaktyUzytkownicyController">
+   <children>
+      <Label layoutX="11.0" layoutY="15.0" text="LISTA KONATKÓW">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tv_uzytkownicy" layoutX="11.0" layoutY="41.0" prefHeight="480.0" prefWidth="700.0">
+        <columns>
+          <TableColumn fx:id="tvc_uzytkownik" prefWidth="100.0" text="UZYTKOWNIK" />
+            <TableColumn fx:id="tvc_flaga_tk" prefWidth="100.0" text="IMIE" visible="false" />
+            <TableColumn fx:id="tvc_id_utk" prefWidth="100.0" text="IMIE" visible="false" />
+          <TableColumn fx:id="tvc_imie" prefWidth="100.0" text="IMIE" />
+            <TableColumn fx:id="tvc_nazwisko" prefWidth="150.0" text="NAZWISKO" />
+            <TableColumn fx:id="tvc_telefon" prefWidth="100.0" text="TELEFON" />
+            <TableColumn fx:id="tvc_email" prefWidth="150.0" text="EMAIL" />
+            <TableColumn fx:id="tvc_github" prefWidth="100.0" text="GITHUB" />
+        </columns>
+      </TableView>
+      <Button layoutX="301.0" layoutY="546.0" mnemonicParsing="false" onMouseClicked="#buttonOdswiezClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="ODŚWIEŻ" />
+      <Label layoutX="721.0" layoutY="15.0" text="TEMAT WIADOMOŚCI" />
+      <TextField fx:id="tf_temat" layoutX="720.0" layoutY="43.0" prefHeight="25.0" prefWidth="470.0" />
+      <Label layoutX="722.0" layoutY="83.0" text="TREŚĆ WIADOMOŚCI" />
+      <TextArea fx:id="ta_tresc" layoutX="722.0" layoutY="108.0" prefHeight="412.0" prefWidth="470.0" />
+      <Button layoutX="895.0" layoutY="546.0" mnemonicParsing="false" onMouseClicked="#buttonWyslijClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="WYŚLIJ" />
+   </children>
+</AnchorPane>

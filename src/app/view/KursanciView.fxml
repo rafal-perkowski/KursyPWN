@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_kursanci" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.KursanciController">
+   <children>
+      <Label layoutX="19.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" text="TABELA KURSANTÓW">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tv_kursanci" layoutX="19.0" layoutY="40.0" onKeyPressed="#tablePressedKeyAction" onKeyReleased="#tableReleasedKeyAction" onMouseClicked="#tableClickedMouseAction" prefHeight="468.0" prefWidth="860.0">
+         <columns>
+            <TableColumn fx:id="tvc_id_kr" prefWidth="50.0" text="ID_KR" />
+            <TableColumn fx:id="tvc_imie" prefWidth="100.0" text="IMIE" />
+            <TableColumn fx:id="tvc_nazwisko" prefWidth="160.0" text="NAZWISKO" />
+            <TableColumn fx:id="tvc_telefon" prefWidth="100.0" text="TELEFON" />
+            <TableColumn fx:id="tvc_email" prefWidth="150.0" text="EMAIL" />
+            <TableColumn fx:id="tvc_github" prefWidth="200.0" text="GITHUB" />
+            <TableColumn fx:id="tvc_id_gr" prefWidth="50.0" text="ID_GR" />
+            <TableColumn fx:id="tvc_id_lg" prefWidth="50.0" text="ID_LG" />
+         </columns>
+      </TableView>
+      <Button layoutX="250.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#buttonUsunClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="USUŃ" />
+      <Button layoutX="450.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#buttonOdswiezClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="ODŚWIEŻ" />
+      <Separator layoutX="899.0" layoutY="6.0" orientation="VERTICAL" prefHeight="588.0" prefWidth="4.0" />
+      <Label layoutX="925.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" text="FORMULARZ KURSANTA">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="925.0" layoutY="85.0" text="IMIE" />
+      <TextField fx:id="tf_imie" layoutX="1008.0" layoutY="80.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="925.0" layoutY="125.0" text="NAZWISKO" />
+      <TextField fx:id="tf_nazwisko" layoutX="1008.0" layoutY="120.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="925.0" layoutY="165.0" text="TELEFON" />
+      <TextField fx:id="tf_telefon" layoutX="1008.0" layoutY="160.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="925.0" layoutY="205.0" text="EMAIL" />
+      <TextField fx:id="tf_email" layoutX="1008.0" layoutY="200.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="925.0" layoutY="245.0" text="GITHUB" />
+      <TextField fx:id="tf_github" layoutX="1008.0" layoutY="240.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="925.0" layoutY="285.0" text="ID_GR" />
+      <TextField fx:id="tf_id_gr" layoutX="1008.0" layoutY="280.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="925.0" layoutY="325.0" text="ID_LG" />
+      <TextField fx:id="tf_id_lg" layoutX="1008.0" layoutY="320.0" prefHeight="25.0" prefWidth="160.0" />
+      <Button layoutX="1000.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#buttonDodajClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="DODAJ" />
+      <Label layoutX="925.0" layoutY="398.0" text="NEW ID_LG" />
+      <ComboBox fx:id="cb_id_lg" layoutX="1008.0" layoutY="394.0" onAction="#comboboxOnAction" prefWidth="160.0" />
+   </children>
+</AnchorPane>

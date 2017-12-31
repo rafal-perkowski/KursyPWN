@@ -1,0 +1,36 @@
+= README - BAZA DANYCH
+
+:githubdir: https://github.com/rperkow
+:projectdir: /KursyPWN
+:blobmasterdir: /blob/master
+:sqldir: sql
+:srcdir: src/app
+
+## Opis bazy danych
+
+Baza składa się z 6-ciu połączonych tabel stworzonych na potrzeby realizacji punktów [1-3] specyfikacji.
+
+Dodatkowy punkt 4-ty został zrealizowany za pomocą niepowiązanej tabeli _**kontakty**_.
+
+### Skrypty SQL
+
+W projekcie (w katalogu sql) znajdują się trzy skrypty SQL:
+
+link:{sqldir}/KURSYPWN-CREATE.sql[KURSYPWN-CREATE [6.29 KB]]::
+
+Uruchomienie pierwszego skryptu (w aplikacji Workbench) skutkuje stworzeniem bazy danych _**kursypwn**_ i jej struktury tabel/widoków/wyzwalaczy.
+
+link:{sqldir}/KURSYPWN-DATA.sql[KURSYPWN-DATA [5.54 KB]]::
+
+Wykonanie drugiego skryptu powoduje wypełnienie stworzonych właśnie tabel przykładowymi danymi.
+
+link:{sqldir}/KURSYPWN-QUERIES.sql[KURSYPWN-QUERIES [1.65 KB]]::
+
+Trzeci skrypt zawiera przykładowe zapytania testowe, listujące zawartości poszczególnych tabel i widoków
+oraz podające liczbę zwracanych przez nie rekordów wynikowych.
+
+### Diagram ER
+
+W pliku link:{sqldir}/ERD-KURSYPWN.png[ERD-KURSYPWN [66.7 KB]] umieszczono diagram bazy danych, prezentujący powiązania pomiędzy tabelami oraz stworzone widoki.
+
+image::sql/ERD-KURSYPWN.png[Diagram ER]

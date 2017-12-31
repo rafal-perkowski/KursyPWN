@@ -1,0 +1,100 @@
+= README - KURSY PWN
+
+:githubdir: https://github.com/rperkow
+:projectdir: /KursyPWN
+:blobmasterdir: /blob/master
+:sqldir: sql
+:srcdir: src/app
+
+## Wstęp
+
+W ramach kolejnego etapu kursu Back-End Developer PWN należało wykonać aplikację w języku Java zgodnie z podaną poniżej specyfikacją.
+
+## Projekt nr 4: Program do oceny projektów kursantów
+
+Opis funkcjonalności:
+
+. Panel logowania
+.. Dwa typu użytkowników: Kursant, Trener
+. Trener - panel administracyjny
+.. Może wybrać grupę i przydzielić jej projekt
+- Temat projektu, opis, termin oddania
+.. Może oceniać projekty w skali od 0 do 10 (co 2 pkt)
+.. Może wyświetlić statystyki oddanych projektów:
+- Dla kursanta
+- Dla grupy
+- Dla wszystkich
+.. Może dodać nową grupę, kursanta do bazy
+.. Może usunąć kursanta z bazy
+. Kursant
+.. Dane kursanta: imię, nazwisko, grupa, telefon, email, github
+.. Kursant może podglądnąć czy ma jakiś projekt do zrobienia, +
+tj. jeśli trener opublikował temat projektu, w widoku kursanta  +
+pojawia się informacja o niewykonanym projekcie
+. Dodatkowo: panel korespondencji wewnętrznej.
+
+## Kursy PWN
+
+### Aplikacja
+
+Aplikacja została napisana z użyciem modelu/wzorca MVC (Model View Controller).
+
+link:README-APP.adoc[README-APP] - opis aplikacji napisanej w języku Java.
+
+### Baza danych
+
+Na jej potrzeby została zaimplementowana także baza danych MySQL (*_kursypwn_*).
+
+link:README-DB.adoc[README-DB] - opis bazy danych zaimplementowanej przy użyciu języka SQL.
+
+
+## Materiały
+
+* "Wprowadzenie do języka Java (Java Standard Edition)" - ~400 slajdów z kursu PWN Back-End Developer.
+* "Java - aplikacje bazodanowe (JDBC)" - ~40 slajdów z kursu PWN Back-End Developer.
+* "Graficzne interfejsy użytkownika (JavaFX)" - ~140 slajdów z kursu PWN Back-End Developer.
+* "Bazy Danych MySQL" - ~250 slajdów z kursu PWN Back-End Developer.
+* https://dev.mysql.com/doc/refman/5.7/en/[MySQL 5.7 Reference Manual] - instrukcja bazy danych MySQL.
+
+## Narzędzia
+
+* https://eclipse.org/downloads/packages/technologyeppdownloadsreleaseoxygenreclipse-java-oxygen-r-win32-x8664zip[Eclipse IDE for Java Developers, Oxygen.1a Release (4.7.1a)] - zintegrowane środowisko programistyczne umożliwiające rozwijanie aplikacji w wielu językach programowania (poprzez tzw. wtyczki, _ang. plugins_).
+* http://gluonhq.com/products/scene-builder/[JavaFX Scene Builder 8.4.1] - aplikacja wykorzysująca bibliotekę JavaFX do tworzenia graficznego interfejsu użytkownika
+* https://dev.mysql.com/downloads/mysql/[MySQL Community Server 5.7.20] - darmowy serwer relacyjnej bazy danych.
+* https://downloads.mysql.com/archives/workbench/[MySQL Workbench 6.3.9] - narzędzie wizualne do tworzenia relacyjnych baz danych z użyciem języka SQL.
+
+## Uruchomienie aplikacji
+
+### Konfiguracja
+
+Program działa razem z bazą danych *_kursypwn_* sprządzoną w ramach projektu *_KursyPWN_*.
+
+NOTE: Dodatkowo należy skonfigurować własne hasło dostępu do serwera bazy danych w pliku link:{srcdir}/logowanie.txt[logowanie.txt] dla konta *_root_* (w miejsce trzech gwiazdek) .
+
+Oczywiście zależnie od potrzeb można skonfigurować także pozostałe parametry logowania podane w kolejnych liniach pliku konfiguracyjnego:
+
+====
+* url - adres komputera z serwerem i bazą danych (_domyślna wartość: **jdbc:mysql://localhost:3306/kursypwn**_)
+* login - nazwa użytkownika na serwerze bazy danych (_domyślna wartość: **root**_)
+* password - hasło użytkownika na serwerze bazy danych (_wymagana konfiguracja_)
+====
+
+Po skonfigurowaniu i nawiązaniu połączenia z bazą danych pojawi się okno logowania do aplikacji.
+
+### Logowanie
+
+W bazie danych (w tabeli *_logowanie_*) zostały stworzone dwa typy wewnętrznych kont logowania demonstrujące różne sposoby interakcji z aplikacją:
+
+====
+* Administrator/Trener - uzyskuje dostęp do własnych danych, dodawania/usuwania grup, kursantów i projektów, może oceniać projekty, wyświetlać statystyki i korzystać z panelu korespondencji wewnętrznej +
+
+Przykładowe dane logowania: _[Login]: t1, [Password]: t1_
+
+* Użytkownik/Kursant - uzyskuje dostęp do własnych danych, informacji o projektach i panelu wewnętrznej korespondencji +
+
+Przykładowe dane logowania: _[Login]: k1, [Password]: k1_
+====
+
+## Informacje dodatkowe
+
+Projekt został zrealizowany na dzień **19 grudnia 2017r.**

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_daneuser" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.DaneUserController">
+   <children>
+      <Label layoutX="80.0" layoutY="30.0" text="DANE PERSONALNE KURSANTA">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="84.0" text="ID_KR" />
+      <TextField fx:id="tf_id_kr" editable="false" layoutX="180.0" layoutY="80.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="134.0" text="IMIE" />
+      <TextField fx:id="tf_imie" editable="false" layoutX="180.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="184.0" text="NAZWISKO" />
+      <TextField fx:id="tf_nazwisko" editable="false" layoutX="180.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="234.0" text="TELEFON" />
+      <TextField fx:id="tf_telefon" editable="false" layoutX="180.0" layoutY="230.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="284.0" text="EMAIL" />
+      <TextField fx:id="tf_email" editable="false" layoutX="180.0" layoutY="280.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="334.0" text="GITHUB" />
+      <TextField fx:id="tf_github" editable="false" layoutX="180.0" layoutY="330.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="380.0" text="ID_GR" />
+      <TextField fx:id="tf_id_gr" editable="false" layoutX="180.0" layoutY="380.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="430.0" text="ID_LG" />
+      <TextField fx:id="tf_id_lg" editable="false" layoutX="180.0" layoutY="430.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" />
+      <Label layoutX="80.0" layoutY="545.0" text="ROLA" />
+      <TextField fx:id="tf_rola" disable="true" layoutX="80.0" layoutY="565.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="250.0" layoutY="546.0" text="LOGIN" />
+      <TextField fx:id="tf_login" disable="true" layoutX="250.0" layoutY="565.0" prefHeight="25.0" prefWidth="150.0" />
+      <ImageView fitHeight="540.0" fitWidth="650.0" layoutX="562.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pwnlogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

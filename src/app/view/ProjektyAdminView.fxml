@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_projekty" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.ProjektyAdminController">
+   <children>
+      <Label layoutX="19.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" text="TABELA PROJEKTÓW">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tv_projekty" layoutX="20.0" layoutY="40.0" onKeyPressed="#tablePressedKeyAction" onKeyReleased="#tableReleasedKeyAction" onMouseClicked="#tableClickedMouseAction" prefHeight="460.0" prefWidth="760.0">
+         <columns>
+            <TableColumn fx:id="tvc_id_pr" prefWidth="75.0" text="ID_PR" />
+            <TableColumn fx:id="tvc_temat" prefWidth="200.0" text="TEMAT" />
+            <TableColumn fx:id="tvc_opis" prefWidth="250.0" text="OPIS" />
+            <TableColumn fx:id="tvc_deadline" prefWidth="150.0" text="DEADLINE" />
+            <TableColumn fx:id="tvc_id_gr" prefWidth="84.0" text="ID_GR" />
+         </columns>
+      </TableView>
+      <Button layoutX="250.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#buttonUsunClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="USUŃ" />
+      <Button layoutX="450.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#buttonOdswiezClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="ODŚWIEŻ" />
+      <Separator layoutX="806.0" layoutY="6.0" orientation="VERTICAL" prefHeight="588.0" prefWidth="4.0" />
+      <Label layoutX="837.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" text="FORMULARZ PROJEKTU">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="837.0" layoutY="85.0" text="TEMAT" />
+      <TextField fx:id="tf_temat" layoutX="920.0" layoutY="80.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="837.0" layoutY="125.0" text="OPIS" />
+      <TextArea fx:id="ta_opis" layoutX="920.0" layoutY="125.0" prefHeight="280.0" prefWidth="260.0" />
+      <Label layoutX="837.0" layoutY="438.0" text="DEADLINE" />
+      <DatePicker fx:id="dp_deadline" layoutX="920.0" layoutY="434.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="837.0" layoutY="478.0" text="ID_GR" />
+      <TextField fx:id="tf_id_gr" layoutX="920.0" layoutY="473.0" prefHeight="25.0" prefWidth="160.0" />
+      <Button layoutX="936.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#buttonDodajClickedMouseAction" prefHeight="40.0" prefWidth="120.0" text="DODAJ" />
+   </children>
+</AnchorPane>

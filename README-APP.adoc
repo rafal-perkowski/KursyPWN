@@ -1,0 +1,170 @@
+= README - APLIKACJA
+
+:githubdir: https://github.com/rperkow
+:projectdir: /KursyPWN
+:blobmasterdir: /blob/master
+:sqldir: sql
+:srcdir: src/app
+
+## Opis aplikacji
+
+Aplikacja składa się z:
+
+* klasy uruchomieniowej link:{srcdir}/Main.java[Main] inicjującej połączenie z bazą danych i wywołującej okno logowania
+* klasy link:{srcdir}/database/DBConnector.java[DBConnector] odpowiedzialnej za otwieranie i zamykanie połączenia z bazą danych
+* klas modelujących tabele bazy danych (_7 klas_), widoki (_6 klas_) i wzorce zapytań (_1 klasa_)
+* widoków FXML konfigurujących graficzny interfejs użytkownika (_13 plików_)
+* klas kontrolerów odpowiedzialnych za interakcję z użytkownikiem i bazą danych (_13 klas_), wyświetlanie okien interfejsu (_1 klasa_) i testowanie (_2 klasy_)
+
+### [M] Model bazy danych
+
+[%header,cols="4,8"]
+|===
+^|Klasa Javy
+^|Nazwy pól (liczba)
+
+|link:{srcdir}/model/Grupa.java[Grupa]
+|[_id_gr, nazwa, opis_] (3)
+
+|link:{srcdir}/model/Kontakty.java[Kontakty]
+|[_id_ko, id_nadawcy, flaga_ntk, id_odbiorcy, flaga_otk, temat, tresc, datetimetag_] (8)
+
+|link:{srcdir}/model/KontaktyKorespondencja.java[KontaktyKorespondencja]
+|[_nadawca, imie_nadawcy, nazwisko_nadawcy, odbiorca, imie_odbiorcy, nazwisko_odbiorcy, temat, tresc, datetimetag_] (9)
+
+|link:{srcdir}/model/KontaktyUzytkownicy.java[KontaktyUzytkownicy]
+|[_uzytkownik, flaga_tk, id_utk, imie, nazwisko, telefon, email, github_] (8)
+
+|link:{srcdir}/model/Kursant.java[Kursant]
+|[_id_kr, imie, nazwisko, telefon, email, github, id_gr, id_lg_] (8)
+
+|link:{srcdir}/model/Logowanie.java[Logowanie]
+|[_id_lg, login, passwd, rola_] (4)
+
+|link:{srcdir}/model/Ocena.java[Ocena]
+|[_id_oc, id_pr, id_kr, statusprj, ocena, id_tr, uwagi_] (7)
+
+|link:{srcdir}/model/OcenyView.java[OcenyView]
+|[_id_gr, nazwa, id_kr, imie, nazwisko, id_pr, temat, deadline, id_oc, ocena, uwagi_] (11)
+
+|link:{srcdir}/model/Projekt.java[Projekt]
+|[_id_pr, temat, opis, deadline, id_gr_] (5)
+
+|link:{srcdir}/model/ProjektyView.java[ProjektyView]
+|[_id_pr, temat, opis, deadline, ocena, uwagi_] (6)
+
+|link:{srcdir}/model/Query.java[Query]
+|[_selectAllFrom, selectAllFromWhere, selectFrom, insertIntoValues, updateSet, updateSetWhere, deleteFrom, deleteFromWhere_] (8)
+
+|link:{srcdir}/model/StatystykiGrupView.java[StatystykiGrupView]
+|[_id_gr, nazwa, status, liczba_] (4)
+
+|link:{srcdir}/model/StatystykiKursantowView.java[StatystykiKursantowView]
+|[_id_gr, nazwa, id_kr, imie, nazwisko, status, liczba_] (7)
+
+|link:{srcdir}/model/Trener.java[Trener]
+|[_id_tr, imie, nazwisko, telefon, email, github, id_lg_] (7)
+|===
+
+### [V] Widoki FXML
+
+[%header,cols="4,8"]
+|===
+^|Widok FXML
+^|Elementy JavaFX (liczba)
+
+|link:{srcdir}/view/AdminView.fxml[AdminView]
+|_AnchorPane_ (2), _Button_ (7), _Separator_ (2)
+
+|link:{srcdir}/view/DaneAdminView.fxml[DaneAdminView]
+|_AnchorPane_ (1), _Label_ (10), _TextField_ (9), _ImageView_ (1)
+
+|link:{srcdir}/view/DaneUserView.fxml[DaneUserView]
+|_AnchorPane_ (1), _Label_ (11), _TextField_ (10), _ImageView_ (1)
+
+|link:{srcdir}/view/GrupyView.fxml[GrupyView]
+|_AnchorPane_ (1), _Label_ (4), _TableView_ (1), _Button_ (3), _Separator_ (1), _TextField_ (1), _TextArea_ (1)
+
+|link:{srcdir}/view/KontaktyKorespondencjaView.fxml[KontaktyKorespondencjaView]
+|_AnchorPane_ (1), _Label_ (1), _TableView_ (1), _TextArea_ (1), _Button_ (2)
+
+|link:{srcdir}/view/KontaktyUzytkownicyView.fxml[KontaktyUzytkownicyView]
+|_AnchorPane_ (1), _Label_ (3), _TableView_ (1), _TextField_ (1), _TextArea_ (1), _Button_ (2)
+
+|link:{srcdir}/view/KursanciView.fxml[KursanciView]
+|_AnchorPane_ (1), _Label_ (10), _TableView_ (1), _Button_ (3), _Separator_ (1), _TextField_ (7), _ComboBox_ (1)
+
+|link:{srcdir}/view/LoginView.fxml[LoginView]
+|_AnchorPane_ (1), _ImageView_ (1), _Label_ (2), _TextField_ (1), _PasswordField_ (1), _Button_ (2)
+
+|link:{srcdir}/view/OcenyView.fxml[OcenyView]
+|_AnchorPane_ (1), _Label_ (3), _TableView_ (1), _Button_ (2), _TextArea_ (1), _ComboBox_ (1)
+
+|link:{srcdir}/view/ProjektyAdminView.fxml[ProjektyAdminView]
+|_AnchorPane_ (1), _Label_ (6), _TableView_ (1), _Button_ (3), _Separator_ (1), _TextField_ (2), _TextArea_ (1), _DatePicker_ (1)
+
+|link:{srcdir}/view/ProjektyUserView.fxml[ProjektyUserView]
+|_AnchorPane_ (1), _Label_ (1), _TableView_ (1), _Button_ (1)
+
+|link:{srcdir}/view/StatystykiView.fxml[StatystykiView]
+|_AnchorPane_ (1), _Label_ (5), _TextField_ (2), _TableView_ (2), _Button_ (1)
+
+|link:{srcdir}/view/UserView.fxml[UserView]
+|_AnchorPane_ (2), _Separator_ (2), _Button_ (3)
+|===
+
+### [C] Klasy kontrolerów
+
+[%header,cols="4,8"]
+|===
+^|Klasa Javy
+^|Opis funkcji
+
+|link:{srcdir}/controller/AdminController.java[AdminController]
+|_implementuje obsługę panelu administratora/trenera_
+
+|link:{srcdir}/controller/DaneAdminController.java[DaneAdminController]
+|_wyświetla dane personalne administratora/trenera_
+
+|link:{srcdir}/controller/DaneUserController.java[DaneUserController]
+|_wyświetla dane personalne użytkownika/kursanta_
+
+|link:{srcdir}/controller/DBController.java[DBController]
+|_umożliwia testowy wydruk całej bazy danych do okna konsoli po ustawieniu flagi [checkdbFlagBool] na [true]_
+
+|link:{srcdir}/controller/GrupyController.java[GrupyController]
+|_umożliwia dodawanie i usuwanie grup_
+
+|link:{srcdir}/controller/KontaktyKorespondencjaController.java[KontaktyKorespondencjaController]
+|_wyświetla korespondencję danego użytkownika_
+
+|link:{srcdir}/controller/KontaktyUzytkownicyController.java[KontaktyUzytkownicyController]
+|_umożliwia wysłanie wiadomości do innego użytkownika znajdującego się na liście kontaktów_
+
+|link:{srcdir}/controller/KursanciController.java[KursanciController]
+|_umożliwia dodawanie i usuwanie kursantów_
+
+|link:{srcdir}/controller/LoginController.java[LoginController]
+|_obsługuje okno logowania do bazy danych_
+
+|link:{srcdir}/controller/OcenyViewController.java[OcenyViewController]
+|_umożliwia ocenianie projektów w bazie danych_
+
+|link:{srcdir}/controller/ProjektyAdminController.java[ProjektyAdminController]
+|_umożliwia dodawanie i usuwanie projektów_
+
+|link:{srcdir}/controller/ProjektyUserController.java[ProjektyUserController]
+|_umożliwia wyświetlenie własnych projektów_
+
+|link:{srcdir}/controller/StatystykiController.java[StatystykiController]
+|_wyświetla statystyki projektów dla całej organizacji, poszczególnych grup i kursantów_
+
+|link:{srcdir}/controller/TestController.java[TestController]
+|_umożliwia śledzenie kolejnych kroków wykonania aplikacji po ustawieniu flagi [tracelFlagBool] na [true]_
+
+|link:{srcdir}/controller/UserController.java[UserController]
+|_implementuje osługuję panelu użytkownika/kursanta_
+
+|link:{srcdir}/controller/ViewController.java[ViewController]
+|_grupuje funkcje wyświetlania obiektów interfejsu okienkowego_
+|===
