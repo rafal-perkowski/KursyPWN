@@ -1,6 +1,7 @@
 package app;
 
 import javafx.application.Application;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import app.controller.TestController;
 import app.controller.ViewController;
@@ -17,10 +18,14 @@ public class Main extends Application {
 		TestController.traceCounter(" IN: Main start(" + stage + ")");
 
 		dbDBConnector = new DBConnector();
-		dbDBConnector.openDBConnection();
-		
 		viewController = new ViewController();
-		viewController.showView(stage, "/app/view/", "LoginView.fxml", "Logowanie do Bazy Danych Kursów", "/app/pwnicon.png");
+		
+		if(dbDBConnector.openDBConnection() != null) {
+			viewController.showView(stage, "/app/view/", "LoginView.fxml", "Logowanie do Bazy Danych Kursów", "/app/pwnicon.png");
+		}
+		else {
+			viewController.showAlert(AlertType.ERROR, "ERROR", "Baza danych!", "Po³¹czenie z baz¹ danych nie zosta³o zestawione!\nSprawdz wartoœci parametrów konfiguracyjnych w pliku logowanie.txt!", "/app/pwnicon.png");
+		}
 		
 		TestController.traceCounter("OUT: Main start(" + stage + ")");
     }
