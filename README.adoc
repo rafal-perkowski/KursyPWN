@@ -59,7 +59,8 @@ link:README-DB.adoc[README-DB] - opis bazy danych zaimplementowanej przy użyciu
 ## Narzędzia
 
 * https://eclipse.org/downloads/packages/technologyeppdownloadsreleaseoxygenreclipse-java-oxygen-r-win32-x8664zip[Eclipse IDE for Java Developers, Oxygen.1a Release (4.7.1a)] - zintegrowane środowisko programistyczne umożliwiające rozwijanie aplikacji w wielu językach programowania (poprzez tzw. wtyczki, _ang. plugins_).
-* http://gluonhq.com/products/scene-builder/[JavaFX Scene Builder 8.4.1] - aplikacja wykorzysująca bibliotekę JavaFX do tworzenia graficznego interfejsu użytkownika
+* http://gluonhq.com/products/scene-builder/[JavaFX Scene Builder 8.4.1] - aplikacja wykorzysująca bibliotekę JavaFX do tworzenia graficznego interfejsu użytkownika.
+* https://dev.mysql.com/downloads/connector/j/5.1.html[MySQL Connector/J 5.1.45] - oficjalny sterownik JDBC do serwera bazy danych MySQL.
 * https://dev.mysql.com/downloads/mysql/[MySQL Community Server 5.7.20] - darmowy serwer relacyjnej bazy danych.
 * https://downloads.mysql.com/archives/workbench/[MySQL Workbench 6.3.9] - narzędzie wizualne do tworzenia relacyjnych baz danych z użyciem języka SQL.
 
