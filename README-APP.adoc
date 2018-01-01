@@ -160,7 +160,7 @@ Aplikacja składa się z:
 |_wyświetla statystyki projektów dla całej organizacji, poszczególnych grup i kursantów_
 
 |link:{srcdir}/controller/TestController.java[TestController]
-|_umożliwia śledzenie kolejnych kroków wykonania aplikacji po ustawieniu flagi [tracelFlagBool] na [true]_
+|_umożliwia śledzenie kolejnych kroków wykonania aplikacji po ustawieniu flagi [traceFlagBool] na [true]_
 
 |link:{srcdir}/controller/UserController.java[UserController]
 |_implementuje osługuję panelu użytkownika/kursanta_

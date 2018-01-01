@@ -3,7 +3,7 @@ package app.controller;
 public class TestController {
 	
 	private static long traceCounterLong = 0;
-	private static boolean tracelFlagBool = false;
+	private static boolean traceFlagBool = false;
 	private static boolean checkdbFlagBool = false;
 
 	public static long getTraceCounterLong() {
@@ -14,12 +14,12 @@ public class TestController {
 		TestController.traceCounterLong = traceCounterLong;
 	}
 
-	public static boolean isTracelFlagBool() {
-		return tracelFlagBool;
+	public static boolean isTraceFlagBool() {
+		return traceFlagBool;
 	}
 
-	public static void setTracelFlagBool(boolean tracelFlagBool) {
-		TestController.tracelFlagBool = tracelFlagBool;
+	public static void setTraceFlagBool(boolean traceFlagBool) {
+		TestController.traceFlagBool = traceFlagBool;
 	}
 
 	public static boolean isCheckdbFlagBool() {
@@ -31,7 +31,7 @@ public class TestController {
 	}
 
 	public static void traceCounter(String messageString) {
-		if(tracelFlagBool)
+		if(traceFlagBool)
 			System.out.println("[" + String.format("%04d", (++traceCounterLong)) + "]: " + messageString);
 	}
 	
