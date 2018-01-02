@@ -1,6 +1,6 @@
 = README - APLIKACJA
 
-:githubdir: https://github.com/rperkow
+:githubdir: https://github.com/rafal-perkowski
 :projectdir: /KursyPWN
 :blobmasterdir: /blob/master
 :sqldir: sql
