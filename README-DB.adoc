@@ -33,4 +33,4 @@ oraz podające liczbę zwracanych przez nie rekordów wynikowych.
 
 W pliku link:{sqldir}/ERD-KURSYPWN.png[ERD-KURSYPWN [66.7 KB]] umieszczono diagram bazy danych, prezentujący powiązania pomiędzy tabelami oraz stworzone widoki.
 
-image::sql/ERD-KURSYPWN.png[Diagram ER]
+image::{sqldir}/ERD-KURSYPWN.png[Diagram ER]

@@ -3,6 +3,7 @@
 :githubdir: https://github.com/rafal-perkowski
 :projectdir: /KursyPWN
 :blobmasterdir: /blob/master
+:imgdir: img
 :sqldir: sql
 :srcdir: src/app
 
@@ -47,6 +48,24 @@ Na jej potrzeby została zaimplementowana także baza danych MySQL (*_kursypwn_*
 
 link:README-DB.adoc[README-DB] - opis bazy danych zaimplementowanej przy użyciu języka SQL.
 
+## Zrzuty ekranu
+
+W katalogu link:{imgdir}[[_img_]] zostały umieszczone zrzuty ekranu aplikacji:
+
+* Okno logowania aplikacji link:{imgdir}/01-login-window.png[[_img_]]
+* Błędne logowanie link:{imgdir}/02-login-window-error.png[[_img_]]
+* Menu trenera (dane) link:{imgdir}/03-trener-dane.png[[_img_]]
+* Menu trenera (grupy) link:{imgdir}/04-trener-grupy.png[[_img_]]
+* Menu trenera (kursanci) link:{imgdir}/05-trener-kursanci.png[[_img_]]
+* Menu trenera (projekty) link:{imgdir}/06-trener-projekty.png[[_img_]]
+* Menu trenera (oceny) link:{imgdir}/07-trener-oceny.png[[_img_]]
+* Menu trenera (statystyki) link:{imgdir}/08-trener-statystyki.png[[_img_]]
+* Menu trenera (korespondencja) link:{imgdir}/09-trener-kontakty-korespondencja.png[[_img_]]
+* Menu trenera (lista kontaktów) link:{imgdir}/10-trener-kontakty-lista.png[[_img_]]
+* Menu kursanta (dane) link:{imgdir}/11-kursant-dane.png[[_img_]]
+* Menu kursanta (projekty)) link:{imgdir}/12-kursant-projekty.png[[_img_]]
+* Menu kursanta (korespondencja) link:{imgdir}/13-kursant-kontakty.png[[_img_]]
+* Menu kursanta (lista kontaktów) link:{imgdir}/14-kursant-kontakty-lista.png[[_img_]]
 
 ## Materiały
 
