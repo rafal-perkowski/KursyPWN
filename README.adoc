@@ -64,7 +64,7 @@ W katalogu link:{imgdir}[[_img_]] zostały umieszczone zrzuty ekranu aplikacji:
 * Menu trenera (lista kontaktów) link:{imgdir}/10-trener-kontakty-lista.png[[_img_]]
 * Menu kursanta (dane) link:{imgdir}/11-kursant-dane.png[[_img_]]
 * Menu kursanta (projekty)) link:{imgdir}/12-kursant-projekty.png[[_img_]]
-* Menu kursanta (korespondencja) link:{imgdir}/13-kursant-kontakty.png[[_img_]]
+* Menu kursanta (korespondencja) link:{imgdir}/13-kursant-kontakty-korespondencja.png[[_img_]]
 * Menu kursanta (lista kontaktów) link:{imgdir}/14-kursant-kontakty-lista.png[[_img_]]
 
 ## Materiały
